@@ -1,0 +1,50 @@
+.feature-box {
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 2.5rem;
+    border-radius: 0.3rem;
+    background-color: rgba($cl-white, 0.7);
+    box-shadow: 0 1.5rem 4rem rgba($cl-black, 0.15);
+    transition: all .3s;
+    
+    @include respond(900) {
+        padding: 1.5rem;
+        margin: 0 auto;
+        width: 40rem;
+        height: auto;
+    }
+    
+    &__icon {
+        font-size: 6rem;
+        background-image: linear-gradient(
+        to left,
+        $cl-light,
+        $cl-darker);
+        margin-bottom: 0.5rem;
+        display: inline-block;
+        -webkit-background-clip: text;
+        color: transparent;
+        
+        @include respond(900) {
+            font-size: 5rem;
+            margin-bottom: 0;
+        }
+    }
+    
+    &__text {
+        letter-spacing: 0.05rem;
+    }
+    
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.05);
+        background-color: rgba($cl-white, 0.9);
+        box-shadow: 0 2rem 4rem rgba($cl-black, 0.25);
+        
+        i {
+            background-image: linear-gradient(
+                to top,
+                $cl-black,
+                $cl-darker);
+        }
+    }
+}

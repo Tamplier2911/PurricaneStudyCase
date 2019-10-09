@@ -1,0 +1,63 @@
+.header {
+    height: 80vh;
+    background-image: linear-gradient(
+        to bottom right,
+        rgba($cl-light, 0.8),
+        rgba($cl-dark, 0.8)), 
+        url('../img/hero-small.jpg');
+    background-size: cover;
+    background-position: center;
+//    background-attachment: fixed;
+    position: relative;
+
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
+
+    @media only screen and (min-resolution: 81dpi) and (min-width: 112.5em),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    only screen and (min-resolution: 192dpi) and (min-width: 37.6em) {
+        background-image: linear-gradient(
+        to bottom right,
+        rgba($cl-extra-light, 0.8),
+        rgba($cl-darker, 0.8)), 
+        url('../img/hero.jpg');
+    }
+
+    @include respond(1200) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 79vh, 0 100% );
+        clip-path: polygon(0 0, 100% 0, 100% 79vh, 0 100% );
+    }
+    
+    @include respond(900) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100% );
+        clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100% );
+    }
+    
+    @include respond(600) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100% );
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100% );
+    }
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 8rem;
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;  
+    }
+
+}

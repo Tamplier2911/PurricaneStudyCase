@@ -1,0 +1,84 @@
+.composition {
+    position: relative;
+    
+    @include respond(900) {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    &__image{
+        position: absolute;
+        width: 60%;
+        box-shadow: 0 1.5rem 4rem rgba($cl-black, .4);
+        border-radius: 5px;
+        z-index: 1;
+        transition: all .2s;
+        outline-offset: 2rem;
+        
+        @include respond(900) {
+            position: relative;
+            float: left;
+            width: 33.3%;
+            outline-offset: 1rem;
+        }
+        
+        &--p1 {
+            left: 0;
+            top: -2rem;
+            
+            @include respond(900) {
+                left: 0;
+                top: 0;
+                transform: scale(1.1) translateY(1rem);
+            }
+        }
+        
+        &--p2 {
+            right: 0;
+            top: 2rem;
+            
+            @include respond(900) {
+                left: 0;
+                top: 0;
+                z-index: 2;
+                transform: scale(1.5);
+            }
+        }
+        
+        &--p3 {
+            left: 20%;
+            top: 12rem;
+            
+            @include respond(900) {
+                left: 0;
+                top: 0;
+                transform: scale(1.3) translateY(-2rem);
+            }
+        }
+        
+        &:hover {
+            transform: scale(1.06) translateY(-.5rem);
+            box-shadow: 0 2.5rem 4rem rgba($cl-black, .5);
+            outline: 1.5rem solid $cl-main;
+            z-index: 3;
+            
+            @include respond(900) {
+                transform: scale(1.8) translateY(-6rem);
+                outline: 1rem solid $cl-main;
+            }
+            
+            @include respond(600) {
+                transform: scale(1.8) translateY(-4rem);
+                outline: 1rem solid $cl-main;
+            }
+        }
+    }
+    
+    &:hover &__image:not(:hover) {
+        transform: scale(0.95);
+        
+        @include respond(900) {
+            transform: scale(1.2);
+        }
+    }
+}

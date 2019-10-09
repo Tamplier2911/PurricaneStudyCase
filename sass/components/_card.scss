@@ -1,0 +1,261 @@
+.card {
+    // FUNCTIONALITY
+    
+    position: relative;
+    height: 50rem;
+    -moz-perspective: 150rem;
+    perspective: 150rem;
+    
+    &__side {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50rem;
+        transition: all 0.8s;
+        transition-timing-function: cubic-bezier(0.3, 0.3, 0.3, 0.3);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        font-size: $def-font-size;
+        box-shadow: 0 1.5rem 4rem rgba($cl-black, 0.15);
+        border-radius: .3rem;
+        overflow: hidden;
+        
+        &--front {
+            background-color: $cl-white;
+            
+            // &-1 {
+                
+            // }
+            
+            // &-2 {
+                
+            // }
+            
+            // &-3 {
+                
+            // }  
+        }
+    
+        &--back {
+            transform: rotateY(180deg);
+            
+            &-1 {
+                background-image: linear-gradient(
+                to bottom right,
+                $cl-card-1-light,
+                $cl-card-1-midle,
+                $cl-card-1-dark);
+            }
+            
+            &-2 {
+                background-image: linear-gradient(
+                to bottom right,
+                $cl-card-1-light,
+                $cl-card-1-midle,
+                $cl-card-1-dark);
+            }
+            
+            &-3 {
+                background-image: linear-gradient(
+                to bottom right,
+                $cl-card-1-light,
+                $cl-card-1-midle,
+                $cl-card-1-dark);
+            }
+        }
+    }
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+    
+    
+    // FRONT SIDE STYLES
+    
+    &__image {
+        height: 22rem;
+        background-size: cover;
+        background-position: center;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        background-blend-mode: screen;
+        overflow: hidden;
+        
+        &--1 {
+            background-image: linear-gradient(
+            to bottom right,
+            $cl-card-1-midle,
+            $cl-card-1-dark),
+            url('../img/pur-5.jpg');
+        }
+        
+        &--2 {
+            background-image: linear-gradient(
+            to bottom right,
+            $cl-card-1-midle,
+            $cl-card-1-dark),
+            url('../img/pur-6.jpg');
+        }
+        
+        &--3 {
+            background-image: linear-gradient(
+            to bottom right,
+            $cl-card-1-midle,
+            $cl-card-1-dark),
+            url('../img/pur-7.jpg');
+        }
+    }
+    
+    &__heading {
+        position: absolute;
+        top: 28%;
+        left: 45%;
+        width: 50%;
+        color: $cl-white;
+        text-align: right;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 2.2rem;
+    
+        &-span {
+            padding: 1rem 1.5rem;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            
+            &--1 {
+                background-image: linear-gradient(
+                    to bottom right,
+                    rgba($cl-light, 0.8),
+                    rgba($cl-dark, 0.8));
+            }
+            
+            &--2 {
+                background-image: linear-gradient(
+                    to bottom right,
+                    rgba($cl-light, 0.8),
+                    rgba($cl-dark, 0.8));
+            }
+            
+            &--3 {
+                background-image: linear-gradient(
+                    to bottom right,
+                    rgba($cl-light, 0.8),
+                    rgba($cl-dark, 0.8));
+            }
+        }
+    }
+    
+    &__details {
+        padding: 2rem;
+        
+        & ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            
+            
+            & li {
+                font-size: $def-font-size;
+                padding: 1rem;
+                text-align: center;
+            }
+            
+            & li:not(:last-child) {
+                border-bottom: 1px solid $cl-light-grey;
+            }
+        }
+    }
+    
+    
+    // BACK SIDE STYLES
+    
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
+    }
+    
+    &__price-box {
+        color: $cl-white;
+        margin-bottom: 8rem;
+        
+        &--only {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+        
+        &--value {
+            font-size: 6rem;
+            font-weight: 100;
+        }
+    }
+
+    @media only screen and (max-width: 56.25em),
+            only screen and (hover: none) {
+
+        // FUNCTIONALITY
+        
+        height: auto;
+        width: 27rem;
+        margin: 0 auto;
+        border-radius: .3rem;
+        background-color: $cl-white;
+        box-shadow: 0 1.5rem 4rem rgba($cl-black, 0.2);
+        
+        &__side {
+            position: relative;
+            width: 100%;
+            height: auto;
+            box-shadow: none;
+        
+            &--back {
+                transform: rotateY(0);
+                -webkit-clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 100%);
+                clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 100%);
+            }
+        }
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+        
+        
+        // FRONT SIDE STYLES
+
+        &__details {
+            padding: 2rem;
+        }
+        
+        
+        // BACK SIDE STYLES
+        
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            text-align: center;
+            width: 100%;
+            padding: 7rem 4rem 4rem 4rem;
+        }
+        
+        &__price-box {
+            color: $cl-white;
+            margin-bottom: 4rem;
+            
+        }
+    }
+
+    @media only screen and (hover: none) and (max-width: 56.25em)  {
+        width: 45rem;
+    }
+
+    @media only screen and (hover: none) and (max-width: 37.5em) {
+        width: 45rem;
+    }
+}

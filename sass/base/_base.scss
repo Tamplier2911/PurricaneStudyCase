@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* default font-size: 16px; */
+    /* 62.5% of 16px = 10px, 1 rem = 10px */
+    font-size: 62.5%;
+    
+    @include respond(1800) {
+        font-size: 75%;          //1rem = 12px (12 / 16 * 100 = 75% )
+    }
+    
+    @include respond(1200) {
+        font-size: 56.25%;       //1rem = 9px (9 / 16 * 100 = 56.25% )
+    }
+    
+    @include respond(900) {
+        font-size: 50%;          //1rem = 8px ( 8 / 16 * 100 = 37.5% )
+    }
+    
+    @include respond(600) {
+        font-size: 43.75%;         //1rem = 6px (6 / 16 * 100 = 37.5% )
+    }
+}
+
+body {
+    /*
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $cl-font;
+    */
+    padding: 2rem;
+    box-sizing: border-box;
+    
+    @include respond(900) {
+        padding: 0;
+    }
+}
+
+::selection {
+    background-color: $cl-main;
+    color: $cl-white;
+}

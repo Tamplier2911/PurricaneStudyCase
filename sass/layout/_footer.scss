@@ -1,0 +1,89 @@
+.footer {
+    padding: 10rem 0;
+    background-color: $cl-footer;
+    color: $cl-font;
+    font-size: 1.5rem;
+    
+    @include respond(900) {
+        padding: 6rem 0;
+    }
+    
+    &__logo-box {
+        text-align: center;
+        padding-bottom: 10rem;
+        
+        @include respond(900) {
+            padding-bottom: 6rem;
+        }
+    }
+    
+    &__logo {
+        width: 20rem;
+        height: auto;
+    }
+    
+    &__nav {
+        display: inline-block;
+        border-top: 2px solid $cl-main;
+        padding-top: 2rem;
+        
+        @include respond(900) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    
+    &__list {
+        list-style: none;
+    }
+    
+    &__item {
+        display: inline-block;
+        
+        &:not(:last-child){
+            margin-right: 2rem;
+        }
+        
+        &:nth-child(odd) :hover{
+            transform: scale(1.2) rotate(-10deg);
+        }
+        
+        &:nth-child(even) :hover{
+            transform: scale(1.2) rotate(10deg);
+        }
+    }
+
+    &__link{
+        
+        &:link,
+        &:visited {
+            color: $cl-font;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all .3s;
+            font-weight: 500;
+        }
+        
+        &:hover,
+        &:active {
+            color: $cl-main;
+            text-shadow: 0 1rem 2rem rgba($cl-black, 0.2);
+            transform: scale(1.2) rotate(10deg);
+        }
+    }
+    
+    &__copyright {
+        // display: inline-block;
+        border-top: 2px solid $cl-main;
+        padding-top: 2rem;
+        width: 95%;
+        float: right;
+        
+        @include respond(900) {
+            width: 100%;
+            float: left;
+            text-align: center;
+        }
+    }
+}
